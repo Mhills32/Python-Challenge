@@ -57,5 +57,12 @@ print(f"Greatest Decrease in Profits: {min_month} (${max_decrease})")
 
 output_file = os.path.join("financial_analysis.csv")
 
-with open(output_file, 'w') as datafile:
-    writer = csv.writer(datafile)
+with open("financial_analysis.txt", "w") as file:
+    # Write the results to the file
+    file.write("Financial Analysis\n")
+    file.write("--------------------------\n")
+    file.write(f"Total Months: {num_months}\n")
+    file.write(f"Total: ${total_pl:.0f}\n")
+    file.write(f"Average Change: {average_change:.2f}\n")
+    file.write(f'Greatest Increase in Profits: {max_month} (${max_increase})\n')
+    file.write(f"Greatest Decrease in Profits: {min_month} (${max_decrease})\n")
